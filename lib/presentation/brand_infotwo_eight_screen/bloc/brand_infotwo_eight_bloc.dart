@@ -1,0 +1,6 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/productcard5_item_model.dart';import 'package:dondondony38_s_application1/presentation/brand_infotwo_eight_screen/models/brand_infotwo_eight_model.dart';part 'brand_infotwo_eight_event.dart';part 'brand_infotwo_eight_state.dart';/// A bloc that manages the state of a BrandInfotwoEight according to the event that is dispatched to it.
+class BrandInfotwoEightBloc extends Bloc<BrandInfotwoEightEvent, BrandInfotwoEightState> {BrandInfotwoEightBloc(BrandInfotwoEightState initialState) : super(initialState) { on<BrandInfotwoEightInitialEvent>(_onInitialize); }
+
+_onInitialize(BrandInfotwoEightInitialEvent event, Emitter<BrandInfotwoEightState> emit, ) async  { emit(state.copyWith(brandInfotwoEightModelObj: state.brandInfotwoEightModelObj?.copyWith(productcard5ItemList: fillProductcard5ItemList()))); } 
+List<Productcard5ItemModel> fillProductcard5ItemList() { return [Productcard5ItemModel(discount: "-15%", title: "panadol advace", description: "medicines", quantity: "quantity : 76", price: "235,00", status: "unaccepte"), Productcard5ItemModel(discount: "-15%", title: "panadol advace", description: "medicines", quantity: "quantity : 76", price: "235,00", status: "accepte")]; } 
+ }
